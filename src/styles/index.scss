@@ -1,0 +1,99 @@
+@import "./libs/reset";
+@import "font";
+@import "text";
+
+body {
+  background-color: #43acabad;
+}
+
+.to-left {
+  float: left;
+}
+
+.to-right {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.clearleft {
+  clear: left;
+}
+
+.clearright {
+  clear: right;
+}
+
+$nav-margin: 40px;
+$nav-height: 65px;
+$nav-graphics-width: 6px;
+$logo-size: $nav-height + abs($nav-graphics-width - $nav-margin)*2;
+nav {
+  margin: $nav-margin 0;
+  background-color: #edd5a9;
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    border-top: $nav-graphics-width solid #edd5a9;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+  }
+  &:after {
+    bottom: -12px;
+  }
+  &:before {
+    top: -12px;
+  }
+
+  .logo {
+    box-sizing: border-box;
+    height: $logo-size;
+    width: $logo-size;
+    display: inline-block;
+    position: relative;
+    top: $nav-graphics-width - $nav-margin;
+    left: $nav-margin - $nav-graphics-width;
+    z-index: 2;
+    overflow: hidden;
+    border: 6px solid #edd5a9;
+    border-radius: 50%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  ul {
+    height: 100%;
+
+    li {
+      display: inline-block;
+      box-sizing: border-box;
+      a {
+        padding: 20px 24px;
+        display: inline-block;
+        font-family: VintageWarehouse;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  .username {
+    font-family: VintageWarehouse;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 100%;
+    font-size: 2.1em;
+    height: 100%;
+    position: absolute;
+    margin-top: 16px;
+    margin-left: 50px;
+  }
+}
